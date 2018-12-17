@@ -1,0 +1,30 @@
+<div class="control-panel">
+  colourpanel 1 works!
+
+  <input [(ngModel)]="text" placeholder="text"/>
+
+  {{ text }}
+
+  <div>
+    {{ rgb.red }} {{ rgb.green }} {{ rgb.blue }}
+  </div>
+
+  <div>
+    <div>
+      <label>RED: </label>
+      <input [(ngModel)]="rgb.red" placeholder="red" />
+      <div [ngClass]="'colour-box'" [ngStyle]="{'background': formatRedHextoFullHex(rgb.red)}"></div>
+    </div>
+    <div>
+      <label>GREEN: </label>
+      <input [(ngModel)]="rgb.green" placeholder="green" />
+      <div [ngClass]="'colour-box'" [ngStyle]="{'background': formatGreenHextoFullHex(rgb.green)}"></div>
+    </div>
+    <div>
+      <label>BLUE: </label>
+      <input [(ngModel)]="rgb.blue" placeholder="blue" />
+      <div [ngClass]="'colour-box'" [ngStyle]="{'background': formatBlueHextoFullHex(rgb.blue)}"></div>
+    </div>
+  </div>
+
+</div>
