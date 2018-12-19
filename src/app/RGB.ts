@@ -1,4 +1,9 @@
 export class RGB {
+    
+    red: number;
+    green: number;
+    blue: number;
+    alpha: number;
 
     constructor(r, g, b, a) {
 
@@ -7,9 +12,4 @@ export class RGB {
         this.blue = b;
         this.alpha = a;
     }
-
-    red: number;
-    green: number;
-    blue: number;
-    alpha: number;
-}
+ }

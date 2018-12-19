@@ -1,38 +1,38 @@
-import { Component, OnInit, Input } from '@angular/core';
-
-import { RGB } from '../RGB';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { RgbService } from '../rgb.service' ;
-import { ConditionalExpr } from '@angular/compiler';
+import { SwatchPanelComponent } from '../swatchpanel/swatchpanel.component'
 
 @Component({
   selector: 'app-controlpanel',
   templateUrl: './controlpanel.component.html',
   styleUrls: ['./controlpanel.component.scss',
-            '../colourmixer/colourmixer.component.scss']
+            '../colourmixer/colourmixer.component.scss'],
+  providers: [RgbService]
 })
 export class ControlPanelComponent implements OnInit {
 
-  @Input() text: string;
-  // rgb: RGB;
+  text: string = 'TEST';
+  rgbService : RgbService;
 
-  constructor(public rgbService : RgbService) { }
+  @ViewChild(SwatchPanelComponent) child: SwatchPanelComponent;
+  
+  constructor(public rgbService_ : RgbService) {
+    this.rgbService = rgbService_;
+   }
 
   ngOnInit() {
-
-    this.text = 'test1';
-    // this.rgb = this.rgbService.getRGB();
-    // let rgb = new RGB(0, 0, 0);
-    // this.rgb = rgb;
+    console.log(this.child);
+    this.child.rgbService = this.rgbService;
+    this.child.rgb = this.rgbService.getRGB();
   }
 
   get rgb() {
-    console.log(this.rgbService);
     return this.rgbService.getRGB();
   }
 
-  set rgb(rgb: RGB) {
-    this.rgbService.setRGB(this.rgb);
-  }
+  // set rgb(rgb: RGB) {
+  //   this.rgbService.setRGB(rgb);
+  // }
 
   singleRGBColourToHex(rgb) { 
     var hex = Number(rgb).toString(16);

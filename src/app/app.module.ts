@@ -9,7 +9,7 @@ import { TopmenubarComponent } from './topmenubar/topmenubar.component';
 import { SidemenubarComponent } from './sidemenubar/sidemenubar.component';
 import { ControlPanelComponent } from './controlpanel/controlpanel.component';
 import { ColourMixerComponent } from './colourmixer/colourmixer.component';
-import { SwatchpanelComponent } from './swatchpanel/swatchpanel.component';
+import { SwatchPanelComponent } from './swatchpanel/swatchpanel.component';
 // import { RgbService } from './rgb.service';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { SwatchpanelComponent } from './swatchpanel/swatchpanel.component';
     SidemenubarComponent,
     ControlPanelComponent,
     ColourMixerComponent,
-    SwatchpanelComponent
+    SwatchPanelComponent
   ],
   imports: [
     BrowserModule,

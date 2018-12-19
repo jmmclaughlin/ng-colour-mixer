@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RGB } from '../RGB';
 
 @Component({
   selector: 'app-colourmixer',

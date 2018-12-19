@@ -1,5 +1,17 @@
 <div>
 
-    <div [ngClass]="'swatch-box'" [ngStyle]="{'background': formatRedHextoFullHex(rgb.red)}"></div>
+
+    <div>
+        Colour Swatch Panel
+
+        {{ swatchtext }}
+
+        <!-- {{ rgbService.rgb.red }} {{ rgbService.rgb.green }} {{ rgbService.rgb.blue }} -->
+        {{ rgb.red }} {{ rgb.green }} {{ rgb.blue }}
+    </div>
+
+
+    <div [ngClass]="'swatch-box'" [ngStyle]="{'background': rgbObjToHex(rgb)}">
+    </div>
 
 </div>
